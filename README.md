@@ -48,3 +48,7 @@ Thư mục [`images/slide/`](images/slide) chứa các hình được cắt ra t
 | 21 | `Slide21_ma-doc-stealer.png` | Sơ đồ hoạt động của một stealer (RedLine) |
 
 **Về bản quyền hình.** Các hình trong `images/slide/` được trích nguyên từ slide của nhóm. Một số hình có nguồn từ bên thứ ba (ví dụ ảnh có hình mờ của trang nguồn, sơ đồ trong tài liệu của nhà cung cấp, sơ đồ mô hình kiểm soát truy cập của Microsoft). Bản quyền các hình đó thuộc về chủ sở hữu tương ứng. Nếu chủ sở hữu yêu cầu gỡ, chúng tôi sẽ xóa hình khỏi repo. Các sơ đồ trong `images/` (ngoài thư mục `slide/`) là do nhóm tự vẽ.
+
+## Ảnh cả trang slide
+
+Thư mục [`images/slide_full/`](images/slide_full) chứa 24 ảnh cả trang của bộ slide (`Slide_01.png` đến `Slide_24.png`, 1920 × 1080). Bản quyền các hình bên thứ ba xuất hiện trong đó cũng thuộc về chủ sở hữu tương ứng, như đã nêu ở trên.
