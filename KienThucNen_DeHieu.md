@@ -99,6 +99,10 @@ Phần còn lại của tài liệu đi theo đúng mạch tự nhiên: **Regist
 
 **Ảnh trên slide: "Sơ đồ mô tả quy trình truy vấn Type Registry"**
 
+![Slide 3: sơ đồ truy vấn Type Registry (minh họa khái niệm chung)](images/slide/Slide03_type-registry.png)
+
+*Hình: Slide 3: sơ đồ truy vấn Type Registry (minh họa khái niệm chung).*
+
 - Ảnh vẽ một mô hình 4 bước về "đăng ký kiểu dữ liệu" nói chung (một bên hỏi kiểu, một "Type Registry" trả về định nghĩa kiểu rồi chuyển dữ liệu tới dịch vụ phù hợp).
 - **Cảnh báo:** đây **không phải** cách Windows Registry hoạt động. Windows Registry **không có** thành phần nào tên "Type Registry". Ảnh chỉ minh họa ý tưởng "registry" ở mức khái niệm chung.
 - **Nếu bị hỏi, trả lời thẳng:** "Ảnh này minh họa khái niệm 'registry' chung, không đúng với Windows Registry. Sơ đồ đúng nên là: *ứng dụng → API (`advapi32.dll`) → Configuration Manager trong nhân → hive trên đĩa*." (Xem mục A7 để mô tả sơ đồ đúng.)
@@ -130,6 +134,10 @@ Phần còn lại của tài liệu đi theo đúng mạch tự nhiên: **Regist
 > **Muốn biết thêm.** Vai trò nào liên quan nhất tới mã độc? Chủ yếu là **khởi động, dịch vụ và thiết lập người dùng** (nơi đặt điểm tự chạy), cùng với **chính sách** (nơi mã độc tắt bảo mật).
 
 **Ảnh trên slide: "Vai trò của Registry"**
+
+![Slide 4: bảy vai trò của Registry](images/slide/Slide04_vai-tro-registry.png)
+
+*Hình: Slide 4: bảy vai trò của Registry.*
 
 - Một biểu tượng Registry ở giữa, bảy ô màu xung quanh đúng theo 7 vai trò trên, kèm khóa/tệp tiêu biểu (ví dụ ô dịch vụ ghi `HKLM\SYSTEM\CurrentControlSet\Services`, ô người dùng ghi `NTUSER.DAT`). **Khớp tiêu đề slide.**
 
@@ -171,6 +179,10 @@ Microsoft khuyến nghị: dữ liệu dài hơn 2.048 byte **nên lưu thành t
 
 **Ảnh trên slide: "Cấu trúc Registry dạng cây"**
 
+![Slide 5: cấu trúc Registry dạng cây](images/slide/Slide05_cay-registry.png)
+
+*Hình: Slide 5: cấu trúc Registry dạng cây.*
+
 - Gốc là "Registry (Computer)", xuống 5 khóa gốc; từ `HKEY_LOCAL_MACHINE` xuống `SOFTWARE`/`SYSTEM`, rồi tới khóa con và cuối cùng là giá trị (ví dụ `ProgramFilesDir` kiểu `REG_SZ`, `Start` kiểu `REG_DWORD`). Cột nhãn bên phải ghi 4 tầng: khóa gốc, khóa, khóa con, giá trị. **Khớp chữ, nhưng ảnh hơi mờ.**
 
 **Câu hỏi hay gặp**
@@ -206,6 +218,10 @@ Microsoft khuyến nghị: dữ liệu dài hơn 2.048 byte **nên lưu thành t
 - **Ghi vào HKLM thường cần quyền quản trị**, nên ảnh hưởng lớn hơn nhưng khó hơn.
 
 **Ảnh trên slide: "Sơ đồ cấu trúc phân cấp của Windows Registry"**
+
+![Slide 6: cấu trúc phân cấp của các khóa gốc](images/slide/Slide06_khoa-goc.png)
+
+*Hình: Slide 6: cấu trúc phân cấp của các khóa gốc.*
 
 - "Windows Registry" ở trên cùng, hai nhánh lớn `HKEY_LOCAL_MACHINE` (có `Hardware`, `Software`, `System`) và `HKEY_USER` (có `Default`, các nhánh SID). Hàng dưới là `HKEY_CURRENT_USER`, `HKEY_CURRENT_CONFIG`, `HKEY_CLASSES_ROOT` với mũi tên từ hai nhánh trên chỉ xuống.
 - **Ý của hình:** HKLM và HKU là hai nơi lưu thật; ba khóa còn lại suy ra từ chúng. **Khớp ý bảng trên**, nhưng ảnh độ phân giải thấp.
@@ -249,6 +265,10 @@ Microsoft khuyến nghị: dữ liệu dài hơn 2.048 byte **nên lưu thành t
 - Cờ cấu hình (như `EnableLUA`, `DisableTaskMgr`) thường là `REG_DWORD` (0 hoặc 1 là đủ làm công tắc).
 
 **Ảnh trên slide: "Các kiểu dữ liệu giá trị trong Registry"**
+
+![Slide 7: các kiểu dữ liệu giá trị trong Registry](images/slide/Slide07_kieu-du-lieu.png)
+
+*Hình: Slide 7: các kiểu dữ liệu giá trị trong Registry.*
 
 - Bảng 12 dòng, cột "ID loại" từ 0 đến 11, đúng theo danh sách trên (0 `REG_NONE` ... 11 `REG_QWORD`). **Khớp chữ và đúng với tài liệu Microsoft**, nhưng chữ nhỏ, khó đọc khi chiếu.
 
@@ -308,6 +328,14 @@ Mỗi hive có tệp **nhật ký giao dịch** để khôi phục khi mất đi
 
 **Ảnh trên slide**
 
+![Slide 8 (trái): Registry Editor minh họa hive, khóa và khóa con](images/slide/Slide08_regedit-hive.png)
+
+*Hình: Slide 8 (trái): Registry Editor minh họa hive, khóa và khóa con.*
+
+![Slide 8 (phải): một số hive tiêu chuẩn và tệp lưu trữ tương ứng](images/slide/Slide08_bang-hive.png)
+
+*Hình: Slide 8 (phải): một số hive tiêu chuẩn và tệp lưu trữ tương ứng.*
+
 - **Bên trái, "Cấu trúc hive registry":** ảnh chụp Registry Editor (giao diện cũ) với ba chú thích **Hive / Keys / Subkeys**, minh họa hive là tập hợp khóa, khóa con, giá trị. Ảnh có hình mờ của trang nguồn.
 - **Bên phải, "Một số hive tiêu chuẩn":** bảng vị trí logic ↔ tệp (SAM, NTUSER.DAT, UsrClass.dat, HARDWARE...). Dòng `NTUSER.DAT` ghi "Chứa khóa Run của nạn nhân". **Khớp bảng ở trên.**
 
@@ -341,6 +369,10 @@ Configuration Manager nằm trong `ntoskrnl.exe` (lõi của Windows) và làm c
 - **Thông báo thay đổi:** cho ứng dụng (`RegNotifyChangeKeyValue`) và cho driver qua **callback** (`CmRegisterCallbackEx`). Driver bảo mật (EDR, diệt virus) đăng ký callback để được báo mọi thao tác và **có thể chặn**.
 
 **Ảnh trên slide: "Kiến trúc truy cập Registry trong Windows"**
+
+![Slide 9: kiến trúc truy cập Registry trong Windows](images/slide/Slide09_kien-truc-truy-cap.png)
+
+*Hình: Slide 9: kiến trúc truy cập Registry trong Windows.*
 
 Đây là sơ đồ **đúng chủ đề** (nên đối chiếu với ảnh sai ở slide 3). Đọc từ trên xuống:
 
@@ -382,6 +414,10 @@ Configuration Manager nằm trong `ntoskrnl.exe` (lõi của Windows) và làm c
 > **Muốn biết thêm (đã xác minh): giá trị `Start` của dịch vụ.** Mỗi dịch vụ có giá trị `Start` quyết định khi nào chạy: **0 = Boot, 1 = System, 2 = Automatic, 3 = Manual (theo yêu cầu), 4 = Disabled.** (Nguồn: Microsoft, `StartType`.)
 
 **Ảnh trên slide: "Vai trò của Registry trong quá trình khởi động và đăng nhập"**
+
+![Slide 10: vai trò của Registry trong quá trình khởi động và đăng nhập](images/slide/Slide10_khoi-dong.png)
+
+*Hình: Slide 10: vai trò của Registry trong quá trình khởi động và đăng nhập.*
 
 - Sơ đồ dọc nối tiếp: UEFI/BIOS → Windows Boot Manager → `winload.efi` → `ntoskrnl.exe` → `smss.exe` → `csrss.exe` → `services.exe`/`lsass.exe` → `winlogon.exe` → `userinit.exe`/`explorer.exe`.
 - Hai ô cuối (màu cam) nhấn vào phần Registry của đăng nhập: `Winlogon` (`Shell`, `Userinit`), `Run`/`RunOnce`, thư mục Startup, Active Setup.
@@ -433,6 +469,10 @@ Muốn ghi nhật ký truy cập một khóa, cần: (1) đặt **SACL** trên k
 
 **Ảnh trên slide: "Quản lý quyền truy cập"**
 
+![Slide 11: quản lý quyền truy cập (DACL, ACE, token)](images/slide/Slide11_quan-ly-quyen.png)
+
+*Hình: Slide 11: quản lý quyền truy cập (DACL, ACE, token).*
+
 - Một **đối tượng** có DACL gồm 3 ACE: ACE 1 **từ chối** "Andrew" đọc/ghi/thực thi; ACE 2 **cho phép** "Nhóm A" ghi; ACE 3 **cho phép** "Mọi người" đọc/thực thi.
 - **Luồng A** mang token của Andrew (thuộc Nhóm A, B, C); **Luồng B** mang token của Jane (thuộc Nhóm A).
 - Hệ thống đọc ACE 1 trước: **Luồng A bị từ chối ngay** (không xét tiếp ACE 2, 3) **dù** Andrew cũng thuộc Nhóm A. **Luồng B** không bị ACE 1 chặn nên đi tiếp tới ACE 2 (được ghi) và ACE 3 (được đọc/thực thi). (Kết quả này đúng với tài liệu Microsoft.)
@@ -463,6 +503,10 @@ Muốn ghi nhật ký truy cập một khóa, cần: (1) đặt **SACL** trên k
 
 **Ảnh trên slide: "Bảo mật registry"**
 
+![Slide 12: bảo vệ Registry ở mức hệ thống](images/slide/Slide12_bao-ve-he-thong.png)
+
+*Hình: Slide 12: bảo vệ Registry ở mức hệ thống.*
+
 - Năm ô quanh một biểu tượng Registry ở giữa, đúng theo 5 lớp trên (Group Policy; Remote Registry; Tamper Protection; Callback Registry; Sao lưu/khôi phục gồm System Restore, Volume Shadow Copy). **Khớp chữ.** Lưu ý: chữ trên slide chỉ có câu giới thiệu, nội dung chính nằm trong ảnh, nên người nói cần đọc được ảnh.
 
 **Câu hỏi hay gặp**
@@ -487,6 +531,10 @@ Muốn ghi nhật ký truy cập một khóa, cần: (1) đặt **SACL** trên k
 > **Muốn biết thêm (đã xác minh).** Từ **Windows 10 phiên bản 1803**, Windows **không còn tự sao lưu** Registry vào thư mục `RegBack` theo mặc định (các tệp ở đó còn nhưng 0 KB). Microsoft khuyến nghị **dùng điểm khôi phục hệ thống**; nếu muốn bật lại cơ chế cũ thì đặt giá trị `EnablePeriodicBackup`. Đây là lý do "sao lưu thủ công" càng quan trọng.
 
 **Ảnh trên slide: "Sao lưu và khôi phục"**
+
+![Slide 13: sao lưu và khôi phục Registry](images/slide/Slide13_sao-luu.png)
+
+*Hình: Slide 13: sao lưu và khôi phục Registry.*
 
 - Bốn ô đúng theo bốn cách trên (System Restore với biểu tượng 4 hive; `reg export`; `reg save`; công cụ sao lưu hệ thống). **Khớp chữ.**
 
@@ -518,6 +566,10 @@ Muốn ghi nhật ký truy cập một khóa, cần: (1) đặt **SACL** trên k
 | **Bên thứ ba** | Regshot (so sánh trước/sau), Registry Explorer, RegRipper (điều tra hive ngoại tuyến). |
 
 **Ảnh trên slide: "Các công cụ quản trị Registry"**
+
+![Slide 14: các công cụ quản trị Registry](images/slide/Slide14_cong-cu.png)
+
+*Hình: Slide 14: các công cụ quản trị Registry.*
 
 - Lưới 8 ô (regedit, Group Policy Editor, cmd, PowerShell, `reg.exe`, WMI, công cụ bên thứ ba, Event Viewer). **Khớp chữ.** Lưu ý: danh sách chữ trên slide chưa nhắc `cmd`, Group Policy Editor và Event Viewer dù ảnh có — nên thống nhất lại (Phần G).
 
@@ -556,6 +608,10 @@ Muốn ghi nhật ký truy cập một khóa, cần: (1) đặt **SACL** trên k
 
 **Ảnh trên slide: "Các dạng mã độc"**
 
+![Slide 15: các dạng mã độc](images/slide/Slide15_phan-loai-ma-doc.png)
+
+*Hình: Slide 15: các dạng mã độc.*
+
 - Nền tối, 10 ô (hai hàng năm ô) đúng 10 loại ở bảng trên, mỗi ô có biểu tượng và một câu mô tả. **Khớp chữ** (tông màu khác các slide khác).
 
 **Câu hỏi hay gặp**
@@ -586,6 +642,10 @@ Muốn ghi nhật ký truy cập một khóa, cần: (1) đặt **SACL** trên k
 > **Lưu ý về cách gọi.** Trong khung MITRE ATT&CK, mục 1, 3, 4, 5 tương ứng các **chiến thuật (tactic)**; mục 6 gộp **hai chiến thuật** (Discovery và Impact); mục 2 là một **kỹ thuật (technique)** cụ thể. Nên nói thẳng: "Đây là cách nhóm nhóm gọn theo mục đích sử dụng Registry, không phải sao chép khung ATT&CK."
 
 **Ảnh trên slide: "Các mục đích lạm dụng Registry của mã độc"**
+
+![Slide 16: các mục đích lạm dụng Registry của mã độc](images/slide/Slide16_muc-dich-lam-dung.png)
+
+*Hình: Slide 16: các mục đích lạm dụng Registry của mã độc.*
 
 - Ô đỏ ở giữa "Mã độc lạm dụng Windows Registry", sáu mũi tên ra sáu ô đúng theo thứ tự trên, và **thứ tự này trùng với thứ tự slide 17–22**. **Khớp chữ.**
 
@@ -661,6 +721,10 @@ Mỗi kiểu trình bày theo khung: *khái niệm → vì sao dùng Registry �
 
 **Ảnh trên slide: "Mã độc duy trì"**
 
+![Slide 17: cơ chế hoạt động của RAT và tác động lên Registry](images/slide/Slide17_ma-doc-duy-tri.png)
+
+*Hình: Slide 17: cơ chế hoạt động của RAT và tác động lên Registry.*
+
 - Bốn cột trái→phải: **Kẻ tấn công → Máy chủ C2 → Máy nạn nhân (Windows) → Tác động lên Registry**. Cột cuối minh họa RAT **sửa Registry để duy trì**, với ba khóa `Run` (HKLM), `Run` (HKCU), `Services`. **Khớp rất sát** chữ trên slide.
 
 **Câu hỏi hay gặp**
@@ -696,6 +760,10 @@ Mỗi kiểu trình bày theo khung: *khái niệm → vì sao dùng Registry �
 **Phòng chống:** hạn chế `mshta` và các script host qua chính sách; bật ghi nhật ký PowerShell; dùng EDR.
 
 **Ảnh trên slide: "Mã độc không tệp" (có logo Viettel IDC)**
+
+![Slide 18: quy trình tấn công của mã độc không tệp (chung, không riêng Registry)](images/slide/Slide18_ma-doc-khong-tep.png)
+
+*Hình: Slide 18: quy trình tấn công của mã độc không tệp (chung, không riêng Registry).*
 
 - Sơ đồ lục giác 6 bước về **chuỗi tấn công fileless nói chung**: thư rác chứa liên kết → người dùng nhấp → trang web tải Flash (có lỗ hổng) → Flash mở **PowerShell** → PowerShell tải và chạy mã từ C2 → gửi dữ liệu đi.
 - **Cảnh báo:** ảnh **không có bước Registry**. Nó chỉ khớp ý "dùng công cụ hợp lệ, chạy trong bộ nhớ", **không** minh họa "cất mã trong giá trị Registry". Ảnh lại có **logo của nhà cung cấp ngoài**.
@@ -807,6 +875,10 @@ Mỗi kiểu trình bày theo khung: *khái niệm → vì sao dùng Registry �
 **Phòng chống:** không lưu mật khẩu trong Registry; bật **bảo vệ LSA** (`RunAsPPL`, ngăn tiến trình không được bảo vệ đọc bộ nhớ LSASS); EDR chặn truy cập `SAM`.
 
 **Ảnh trên slide: "Sơ đồ hoạt động mã độc stealer"**
+
+![Slide 21: sơ đồ hoạt động của một stealer (RedLine, minh họa chung)](images/slide/Slide21_ma-doc-stealer.png)
+
+*Hình: Slide 21: sơ đồ hoạt động của một stealer (RedLine, minh họa chung).*
 
 - Sơ đồ chuỗi của một stealer (ảnh ghi tên **RedLine Stealer**): phát tán → thả tệp → giải mã cấu hình → thu thập → gửi về C2. Có khung "Mục tiêu cấu hình" (trình duyệt, Steam, FTP, ví tiền mã hóa, Telegram...) và "Thông tin hệ thống".
 - **Cảnh báo:** ảnh là họ **RedLine**, trong khi chữ slide nói **Agent Tesla, LokiBot**; và ảnh **không thể hiện thao tác Registry**. Nên ghi chú "minh họa chung".
